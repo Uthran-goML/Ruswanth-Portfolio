@@ -318,53 +318,67 @@ export const gearList = [
 export const experiences = [
     {
         id: "exp-1",
-        role: "Product Designer",
-        company: "Mygate",
+        role: "Graphic Designer",
+        company: "GoML (Neuralgo.ai) ",
         location: "Bengaluru, KA",
-        dates: "Aug '24 - Present",
+        dates: "Mar 2025 – Present -",
         current: true,
         descriptions: [
-            "Own <strong>end to end product design</strong> across Resident App, ERP, Payments, Helpdesk, and Smart Devices.",
-            "Led the design and launch of <strong>QuickPass</strong>, now used across 500+ societies with 28,000+ downloads.",
-            "Redesigned the <strong>Helpdesk ecosystem</strong> and contributed to large scale payments and access control experiences.",
+            "Develop cohesive brand identities and visual design systems across marketing, product, digital, and corporate communications.",
+            "Design websites, landing pages, UI/UX interfaces, marketing campaigns, and digital creatives to strengthen brand consistency and engagement.",
+            "Translate complex AI and technology concepts into compelling visual narratives, leveraging AI-powered design workflows to accelerate creative production",
         ]
     },
     {
         id: "exp-2",
-        role: "Product Design Intern",
-        company: "Mygate",
+        role: "Graphic Designer",
+        company: "Madhatter Creative",
         location: "Bengaluru, KA",
-        dates: "Jun '24 - Aug '24",
+        dates: "Jun 2024 – Mar 2025",
         current: false,
         descriptions: [
-            "Designed features and improvements for <strong>smart locks</strong> and connected device experiences.",
-            "Led design for the <strong>Smart Video Doorbell MVP</strong>, from early concepts to validation.",
-            "Worked across mobile and hardware touchpoints to improve onboarding and daily usage flows.",
+            "Created brand identities, logo designs, and visual communication systems for diverse clients across multiple industries.",
+            "Designed websites, UI/UX layouts, digital marketing campaigns, social media creatives, and presentations aligned with client objectives",
+            "Translated creative briefs into cohesive branding and graphic design solutions, maintaining visual consistency across digital and marketing touchpoints."
         ]
     },
     {
         id: "exp-3",
-        role: "UI / UX Design Intern",
-        company: "Gida Technologies",
+        role: "Graphic Designer",
+        company: "Granny's Things",
         location: "Bengaluru, KA",
-        dates: "Dec '23 - Apr '24",
+        dates: "Jun 2023 – Jun 2024",
         current: false,
         descriptions: [
-            "Designed key experiences for the <strong>HDFC Ergo Here App</strong>, simplifying insurance purchase journeys.",
-            "Led end to end design for <strong>Here Pets</strong>, supporting the launch of pet insurance services.",
+            "Designed digital and print marketing creatives to support brand communication, product promotion, and customer engagement",
+            "Developed product packaging, labels, promotional materials, and brand collateral to maintain a consistent visual identity.",
+            "Managed end-to-end graphic design projects, from concept development to final production, ensuring quality and brand consistency.",
         ]
     },
-    {
-        id: "exp-4",
-        role: "UI / UX Design Intern",
-        company: "Aurochs Solutions",
-        location: "Pune, MH",
-        dates: "May '23 - Jul '23",
-        current: false,
-        descriptions: [
-            "Designed <strong>enterprise workflows</strong> for pharmaceutical and medical device incentive management products.",
-            "Created user flows, wireframes, and interfaces for complex <strong>B2B platforms</strong>.",
-            "Collaborated with product and engineering teams to improve usability across core workflows.",
-        ]
-    }
+    // {
+    //     id: "exp-3",
+    //     role: "UI / UX Design Intern",
+    //     company: "Gida Technologies",
+    //     location: "Bengaluru, KA",
+    //     dates: "Dec '23 - Apr '24",
+    //     current: false,
+    //     descriptions: [
+    //         "Created brand identities, logo designs, and visual communication systems for diverse clients across multiple industries.",
+    //         "Designed websites, UI/UX layouts, digital marketing campaigns, social media creatives, and presentations aligned with client objectives",
+    //         "Translated creative briefs into cohesive branding and graphic design solutions, maintaining visual consistency across digital and marketing touchpoints."
+    //     ]
+    // },
+    // {
+    //     id: "exp-4",
+    //     role: "UI / UX Design Intern",
+    //     company: "Aurochs Solutions",
+    //     location: "Pune, MH",
+    //     dates: "May '23 - Jul '23",
+    //     current: false,
+    //     descriptions: [
+    //         "Designed <strong>enterprise workflows</strong> for pharmaceutical and medical device incentive management products.",
+    //         "Created user flows, wireframes, and interfaces for complex <strong>B2B platforms</strong>.",
+    //         "Collaborated with product and engineering teams to improve usability across core workflows.",
+    //     ]
+    // }
 ]

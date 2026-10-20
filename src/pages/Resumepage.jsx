@@ -1,7 +1,9 @@
 import { Download } from 'lucide-react'
 import React from 'react'
 import { ImDownload2 } from 'react-icons/im'
-import resume from '../assets/test-resume.webp'
+import resume from '../assets/Raswanth_Visual Designer_Resume.png'
+import Footer from '../components/Footer'
+
 
 
 const Image=()=>{
@@ -42,6 +44,7 @@ const Resumepage = () => {
       <main className='resume-container'>
             <img src={resume} alt="" />
       </main>
+      <Footer/>
     </main>
     </>
   )

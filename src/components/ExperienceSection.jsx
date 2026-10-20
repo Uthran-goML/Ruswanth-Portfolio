@@ -1,35 +1,40 @@
 import React, { useRef, useEffect, useState } from "react"
 import { motion, useScroll, useTransform, useSpring, useReducedMotion } from "framer-motion"
 import { MapPin } from "lucide-react"
+import img1 from '../assets/frame 33.png'
+import img2 from '../assets/image 2.png'
+import img3 from '../assets/Portfolio Branding sheet.png'
 
 function PostageStampLogo({ company }) {
-    if (company === "Mygate") {
+    if (company === "GoML (Neuralgo.ai)") {
+        console.log(company);
         return (
             <div className="exp-stamp">
                 <div className="exp-stamp__inner exp-stamp__inner--mygate">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <rect x="3" y="4" width="4" height="16" rx="1.2" fill="#18181B" />
-                        <rect x="10" y="4" width="4" height="16" rx="1.2" fill="#18181B" />
-                        <rect x="17" y="10" width="4" height="10" rx="1.2" fill="#18181B" />
-                        <circle cx="19" cy="6" r="2" fill="#18181B" />
-                    </svg>
+                    <img src={img1} alt="" srcset="" />
                 </div>
             </div>
         )
     }
-    if (company === "Gida Technologies") {
+    if (company === "Madhatter Creative") {
         return (
             <div className="exp-stamp">
                 <div className="exp-stamp__inner exp-stamp__inner--gida">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="9.5" r="4" stroke="#00E5FF" strokeWidth="2.2" />
-                        <path d="M16 9.5V14.5C16 17 14 19 11.5 19C9 19 7.5 17.5 7.5 17.5" stroke="#00E5FF" strokeWidth="2.2" strokeLinecap="round" />
-                        <circle cx="16" cy="5.5" r="1.3" fill="#00E5FF" />
-                    </svg>
+                   <img src={img2} alt="" />
                 </div>
             </div>
         )
     }
+    if (company === "Granny's Things") {
+        return (
+            <div className="exp-stamp">
+                <div className="exp-stamp__inner exp-stamp__inner--gida">
+                 <img src={img3} alt="" />
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="exp-stamp">
             <div className="exp-stamp__inner exp-stamp__inner--aurochs">

@@ -12,8 +12,9 @@ export default function BottomNavigation() {
     const links = [
         { to: "/", label: "Home" },
         { to: "/portfolio", label: "Portfolio" },
-        { to: "/blog", label: "Blog" },
+        // { to: "/blog", label: "Blog" },
         { to: "/about", label: "About" },
+        { to: "/resume", label: "Resume" },
     ]
 
     return (
