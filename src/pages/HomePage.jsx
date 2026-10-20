@@ -33,6 +33,13 @@ import {
   siteInfo,
   experiences,
 } from "../data/content";
+import Footer from "../components/Footer";
+import secondaryLogo from "../assets/Secondary logo.png";
+import logomark from "../assets/Logomark.png";
+import cloudBg from "../assets/Group 7.png";
+import heroPerson from "../assets/Hero bg 1.png";
+import rightFeather from "../assets/right-feather.png";
+import leftFeather from "../assets/left-feather.png";
 
 export default function HomePage() {
   const reduceMotion = useReducedMotion();
@@ -79,55 +86,124 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
-        {/* Sky Layer (Full Bleed Background) */}
-        <div className="hero-sky-wrap" aria-hidden="true">
-          <img src="/images/sky.jpg" alt="" className="hero-sky-img" />
-        </div>
+        {/* Top Header / Branding Nav */}
+        <header className="hero-top-nav">
+          <div className="hero-nav-left">
+            <Link
+              to="/"
+              className="hero-secondary-logo-link"
+              aria-label="Raswanth Srinivasan"
+            >
+              <img
+                src={secondaryLogo}
+                alt="Raswanth Srinivasan"
+                className="hero-secondary-logo-img"
+              />
+            </Link>
+          </div>
+          <div className="hero-nav-center">
+            <img
+              src={logomark}
+              alt="Logo"
+              className="hero-logomark-img"
+            />
+          </div>
+        </header>
 
-        {/* Cloud Layer: Parallax Speed 90 */}
+        {/* Cloud Layer (Background) */}
         <div className="hero-cloud-container" aria-hidden="true">
           <motion.div
             className="hero-cloud-motion-wrap"
             style={!reduceMotion ? { y: cloudParallaxY } : {}}
           >
-            <img src="/images/cloud.png" alt="" className="hero-cloud-img" />
-          </motion.div>
-        </div>
-
-        {/* Center Title Container: AUGUST + Camera Corners */}
-        <div className="hero-title-container">
-          <motion.div
-            className="hero-title-box"
-            initial={!reduceMotion ? { opacity: 0, y: 100 } : false}
-            animate={!reduceMotion ? { opacity: 1, y: 0 } : {}}
-            transition={{
-              type: "spring",
-              duration: 2,
-              bounce: 0.2,
-              delay: preloaded ? 0.2 : 0.6,
-            }}
-          >
-            <h1 className="hero-main-heading">AUGUST</h1>
-          </motion.div>
-        </div>
-
-        {/* Head Cutout Layer: Parallax Speed 106 */}
-        <div className="hero-head-container" aria-hidden="true">
-          <motion.div
-            className="hero-head-motion-wrap"
-            style={!reduceMotion ? { y: headParallaxY } : {}}
-          >
             <img
-              src="/images/head.png"
-              alt="August Renner"
-              className="hero-head-img"
+              src={cloudBg}
+              alt=""
+              className="hero-cloud-img"
             />
           </motion.div>
         </div>
 
-        {/* Bottom gradient mask and progressive blur layer */}
+        {/* Middle Typography Layer: Greeting, Visual Designer, Subtext */}
+        <div className="hero-content-layer">
+          <div className="hero-typography-container">
+            {/* Greeting: 👋 Hey, I'm Raswanth */}
+            <motion.div
+              className="hero-greeting-box"
+              initial={!reduceMotion ? { opacity: 0, y: 25 } : false}
+              animate={!reduceMotion ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.9,
+                delay: preloaded ? 0.15 : 0.45,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              <span className="hero-greeting-wave">👋</span>
+              <span className="hero-greeting-text">
+                Hey, I'm <strong>Raswanth</strong>
+              </span>
+            </motion.div>
+
+            {/* Headline: Visual Designer */}
+            <motion.h1
+              className="hero-main-title"
+              initial={!reduceMotion ? { opacity: 0, y: 45 } : false}
+              animate={!reduceMotion ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                type: "spring",
+                duration: 1.6,
+                bounce: 0.12,
+                delay: preloaded ? 0.25 : 0.55,
+              }}
+            >
+              <span className="hero-title-word hero-word-visual">Visual</span>
+              <span className="hero-title-word hero-word-designer">Designer</span>
+            </motion.h1>
+
+            {/* Subtext under right side of Designer */}
+            <motion.div
+              className="hero-tagline-box"
+              initial={!reduceMotion ? { opacity: 0, y: 20 } : false}
+              animate={!reduceMotion ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.9,
+                delay: preloaded ? 0.35 : 0.7,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              <p className="hero-tagline-text">
+                Making pixels behave and brands stop
+                <br />
+                looking like everyone else.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Head/Portrait Cutout Layer (Foreground) */}
+        <div className="hero-person-container" aria-hidden="true">
+          <motion.div
+            className="hero-person-motion-wrap"
+            style={!reduceMotion ? { y: headParallaxY } : {}}
+            initial={!reduceMotion ? { opacity: 0, y: 40 } : false}
+            animate={!reduceMotion ? { opacity: 1, y: 0 } : {}}
+            transition={{
+              type: "spring",
+              duration: 1.8,
+              bounce: 0.1,
+              delay: preloaded ? 0.2 : 0.5,
+            }}
+          >
+            <img
+              src={heroPerson}
+              alt="Raswanth"
+              className="hero-person-img"
+            />
+          </motion.div>
+        </div>
+
+        {/* Bottom gradient mask for smooth fade into page content */}
         <div className="hero-bottom-fade-mask" aria-hidden="true" />
-        <div className="hero-progressive-blur" aria-hidden="true" />
       </section>
 
       {/* 2. TRUST / PHILOSOPHY STRIP */}
@@ -135,19 +211,7 @@ export default function HomePage() {
         <div className="trust-strip-inner">
           {/* Left subtle wreath ornament */}
           <div className="trust-wreath trust-wreath-left" aria-hidden="true">
-            <svg
-              viewBox="0 0 100 100"
-              width="64"
-              height="64"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.2"
-            >
-              <path d="M50 10 C35 25, 20 45, 25 75 C30 85, 45 92, 50 95" />
-              <circle cx="30" cy="40" r="4" />
-              <circle cx="26" cy="55" r="4" />
-              <circle cx="28" cy="70" r="4" />
-            </svg>
+           <img src={leftFeather} alt="" />
           </div>
 
           <motion.div
@@ -194,27 +258,10 @@ export default function HomePage() {
               Over 100 brands, magazines, and independent labels trust me to
               capture their stories through bold, refined imagery.
             </p>
-
-            <div className="trust-label-row">
-              <SectionLabel>Philosophy</SectionLabel>
-            </div>
           </motion.div>
-
           {/* Right subtle wreath ornament */}
           <div className="trust-wreath trust-wreath-right" aria-hidden="true">
-            <svg
-              viewBox="0 0 100 100"
-              width="64"
-              height="64"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.2"
-            >
-              <path d="M50 10 C65 25, 80 45, 75 75 C70 85, 55 92, 50 95" />
-              <circle cx="70" cy="40" r="4" />
-              <circle cx="74" cy="55" r="4" />
-              <circle cx="72" cy="70" r="4" />
-            </svg>
+            <img src={rightFeather} alt=""/>
           </div>
         </div>
       </section>
@@ -223,18 +270,13 @@ export default function HomePage() {
       <section ref={introSectionRef} className="intro-sticky-section">
         {/* Sticky Center Viewport: Philosophy Badge, Word Blur Reveal, © August Renner */}
         <div className="intro-sticky-viewport">
-          <div className="intro-sticky-center-card">
-            <div className="intro-badge-wrap">
-              <SectionLabel>Philosophy</SectionLabel>
-            </div>
-
-            <StickyBlurReveal
-              text="Every photograph should make an impact. I capture moments that blend artistry, storytelling, and emotion to create visuals that stand out."
-              scrollProgress={introProgress}
-            />
-
-            <span className="intro-signature">© August Renner</span>
+          <div className="trust-label-row">
+            <SectionLabel>Philosophy</SectionLabel>
           </div>
+          <StickyBlurReveal
+            text="With 3+ years of experience, I turn ideas into compelling brand identities, intuitive digital experiences, and visual stories that connect creativity with purpose."
+            scrollProgress={introProgress}
+          />
         </div>
 
         {/* Flowing Images that scroll up and frame the sticky center */}
@@ -707,6 +749,7 @@ export default function HomePage() {
 
       {/* 10. CLOSING CTA */}
       <CTASection />
+      <Footer />
     </div>
   );
 }

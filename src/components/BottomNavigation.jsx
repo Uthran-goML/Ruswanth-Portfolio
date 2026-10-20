@@ -17,7 +17,14 @@ export default function BottomNavigation() {
     ]
 
     return (
-        <div className="floating-bottom-nav-wrap">
+        <motion.div 
+        initial={{y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
+        className="floating-bottom-nav-wrap">
             <nav
                 className={`floating-bottom-pill ${mobileOpen ? "floating-pill-mobile-open" : ""}`}
                 aria-label="Site navigation"
@@ -108,6 +115,6 @@ export default function BottomNavigation() {
                     </button>
                 </div>
             </nav>
-        </div>
+        </motion.div>
     )
 }

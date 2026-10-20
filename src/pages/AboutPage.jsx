@@ -4,6 +4,7 @@ import SectionLabel from "../components/SectionLabel"
 import MasterButton from "../components/MasterButton"
 import CTASection from "../components/CTASection"
 import TextEffect from "../components/TextEffect"
+import aboutImg from '../assets/about_img.png';
 import { gearList, testimonials } from "../data/content"
 
 export default function AboutPage() {
@@ -22,8 +23,8 @@ export default function AboutPage() {
                     <div className="about-portrait-col">
                         <div className="about-circle-portrait-wrap">
                             <img
-                                src="/images/august-portrait.svg"
-                                alt="August Renner portrait"
+                                src={aboutImg}
+                                alt="Ruswanth portrait"
                                 className="about-circle-portrait-img"
                             />
                         </div>
@@ -33,18 +34,24 @@ export default function AboutPage() {
                     <div className="about-hero-copy-col">
                         <SectionLabel>About Me</SectionLabel>
                         <h1 className="about-hero-heading">
-                            <TextEffect text="Hey, I’m August Renner" tokenization="character" delay={0.5} />
+                            <TextEffect text="a little about myself" tokenization="character" delay={0.5} />
                         </h1>
                         <p className="about-hero-bio">
-                            I’m a fashion, editorial, and commercial photographer based between Berlin and London. Over the past decade, I’ve dedicated my practice to creating image systems that feel authentic, calm, and enduring.
-                        </p>
+                           I’m **Raswanth Srinivasan, a Visual Designer with 3+ years of experience** building bold brand identities, impactful marketing visuals, and intuitive digital experiences. I turn complex ideas into clear, compelling designs that help businesses stand out, connect with audiences, and grow.
+                           </p>
+                        <p className="about-hero-bio">
+                           From **logo design and brand identity to UI/UX design, website design, Shopify stores, and digital marketing creatives**, I combine strategic thinking, visual storytelling, and AI-powered creative workflows to deliver design that looks exceptional and works with purpose.
+                           </p>
+                        <p className="about-hero-bio">
+                          With a background in Computer Science Engineering and hands-on experience designing for AI and technology brands, I bridge creativity and technology to solve real-world problems through design. My approach is simple: **make complex ideas clear, make brands memorable, and make every pixel count.**
+                          </p>
                         <div className="about-hero-actions">
-                            <MasterButton to="/portfolio" variant="dark">
+                            {/* <MasterButton to="/portfolio" variant="dark">
                                 View portfolio
                             </MasterButton>
                             <MasterButton to="/contact" variant="light">
                                 Get in touch
-                            </MasterButton>
+                            </MasterButton> */}
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ export function ApertureMark({ size = 26 }) {
             whileHover={!reduceMotion ? { rotate: 180 } : {}}
             transition={{ type: "spring", duration: 1, bounce: 0.2 }}
         >
-            <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="1.75">
+            <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="white" strokeWidth="1.75">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="14.31" y1="8" x2="20.05" y2="17.94" />
                 <line x1="9.69" y1="8" x2="21.17" y2="8" />

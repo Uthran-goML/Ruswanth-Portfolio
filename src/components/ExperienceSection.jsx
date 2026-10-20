@@ -188,7 +188,7 @@ export default function ExperienceSection({ experiences = [] }) {
                                     </div>
 
                                     {/* BOTTOM HALF */}
-                                    <div className="exp-node__bottom">
+                                    <div className="exp-node__top">
                                         {isTop ? (
                                             <>
                                                 <div className="exp-stem exp-stem--from-axis" />

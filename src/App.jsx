@@ -12,6 +12,7 @@ import ContactPage from "./pages/ContactPage"
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage"
 import TermsPage from "./pages/TermsPage"
 import NotFoundPage from "./pages/NotFoundPage"
+import Resumepage from "./pages/Resumepage"
 
 function AnimatedPage({ children }) {
     const reduceMotion = useReducedMotion()
@@ -33,7 +34,6 @@ function AnimatedPage({ children }) {
 
 export default function App() {
     const location = useLocation()
-
     return (
         <AppShell>
             <AnimatePresence mode="wait">
@@ -45,6 +45,7 @@ export default function App() {
                     <Route path="/blog/:slug" element={<AnimatedPage><BlogDetailPage /></AnimatedPage>} />
                     <Route path="/about" element={<AnimatedPage><AboutPage /></AnimatedPage>} />
                     <Route path="/contact" element={<AnimatedPage><ContactPage /></AnimatedPage>} />
+                    <Route path="/resume" element={<AnimatedPage><Resumepage/></AnimatedPage>}/>
                     <Route path="/privacy-policy" element={<AnimatedPage><PrivacyPolicyPage /></AnimatedPage>} />
                     <Route path="/terms-and-conditions" element={<AnimatedPage><TermsPage /></AnimatedPage>} />
                     <Route path="/404" element={<AnimatedPage><NotFoundPage /></AnimatedPage>} />
@@ -52,5 +53,6 @@ export default function App() {
                 </Routes>
             </AnimatePresence>
         </AppShell>
+        
     )
 }
