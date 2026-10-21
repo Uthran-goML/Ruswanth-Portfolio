@@ -23,7 +23,6 @@ import CTASection from "../components/CTASection";
 import TextEffect from "../components/TextEffect";
 import StickyBlurReveal from "../components/StickyBlurReveal";
 import ExperienceSection from "../components/ExperienceSection";
-
 import {
   portfolioProjects,
   blogPosts,
@@ -34,12 +33,13 @@ import {
   experiences,
 } from "../data/content";
 import Footer from "../components/Footer";
-import secondaryLogo from "../assets/Secondary logo.png";
-import logomark from "../assets/Logomark.png";
-import cloudBg from "../assets/Group 7.png";
-import heroPerson from "../assets/Hero bg 1.png";
+import secondaryLogo from "../assets/Secondary logo.svg";
+import logomark from "../assets/Group 4.svg";
+import cloudBg from "../assets/bg image.webp";
+import heroPerson from "../assets/Bg Foreground image.webp";
 import rightFeather from "../assets/right-feather.png";
 import leftFeather from "../assets/left-feather.png";
+import AboutSection from "./AboutSection";
 
 export default function HomePage() {
   const reduceMotion = useReducedMotion();
@@ -102,11 +102,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="hero-nav-center">
-            <img
-              src={logomark}
-              alt="Logo"
-              className="hero-logomark-img"
-            />
+            <img src={logomark} alt="Logo" className="hero-logomark-img" />
           </div>
         </header>
 
@@ -116,11 +112,7 @@ export default function HomePage() {
             className="hero-cloud-motion-wrap"
             style={!reduceMotion ? { y: cloudParallaxY } : {}}
           >
-            <img
-              src={cloudBg}
-              alt=""
-              className="hero-cloud-img"
-            />
+            <img src={cloudBg} alt="" className="hero-cloud-img" />
           </motion.div>
         </div>
 
@@ -157,7 +149,9 @@ export default function HomePage() {
               }}
             >
               <span className="hero-title-word hero-word-visual">Visual</span>
-              <span className="hero-title-word hero-word-designer">Designer</span>
+              <span className="hero-title-word hero-word-designer">
+                Designer
+              </span>
             </motion.h1>
 
             {/* Subtext under right side of Designer */}
@@ -194,11 +188,7 @@ export default function HomePage() {
               delay: preloaded ? 0.2 : 0.5,
             }}
           >
-            <img
-              src={heroPerson}
-              alt="Raswanth"
-              className="hero-person-img"
-            />
+            <img src={heroPerson} alt="Raswanth" className="hero-person-img" />
           </motion.div>
         </div>
 
@@ -211,7 +201,7 @@ export default function HomePage() {
         <div className="trust-strip-inner">
           {/* Left subtle wreath ornament */}
           <div className="trust-wreath trust-wreath-left" aria-hidden="true">
-           <img src={leftFeather} alt="" />
+            <img src={leftFeather} alt="" />
           </div>
 
           <motion.div
@@ -222,7 +212,7 @@ export default function HomePage() {
             transition={{ type: "spring", duration: 1, bounce: 0.2 }}
           >
             <div className="trust-avatars-and-stars">
-              <div className="avatar-overlap-group">
+              {/* <div className="avatar-overlap-group">
                 <img
                   src="/images/client-avatar-1.svg"
                   alt="Client avatar"
@@ -238,8 +228,8 @@ export default function HomePage() {
                   alt="Client avatar"
                   className="avatar-circle"
                 />
-              </div>
-              <div className="stars-row" aria-label="5 star trusted rating">
+              </div> */}
+              {/* <div className="stars-row" aria-label="5 star trusted rating">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
@@ -248,20 +238,21 @@ export default function HomePage() {
                     color="var(--star-accent)"
                   />
                 ))}
-              </div>
+              </div> */}
             </div>
 
             <h2 className="trust-headline">
-              Trusted by brands & creatives worldwide
+              Turning Ideas Into Impact
             </h2>
             <p className="trust-description">
-              Over 100 brands, magazines, and independent labels trust me to
-              capture their stories through bold, refined imagery.
+              I turn complex ideas into brands people remember and experiences 
+              people connect with — thoughtful visuals, intuitive interfaces, and design that 
+              makes even the complicated feel effortless.
             </p>
           </motion.div>
           {/* Right subtle wreath ornament */}
           <div className="trust-wreath trust-wreath-right" aria-hidden="true">
-            <img src={rightFeather} alt=""/>
+            <img src={rightFeather} alt="" />
           </div>
         </div>
       </section>
@@ -271,7 +262,7 @@ export default function HomePage() {
         {/* Sticky Center Viewport: Philosophy Badge, Word Blur Reveal, © August Renner */}
         <div className="intro-sticky-viewport">
           <div className="trust-label-row">
-            <SectionLabel>Philosophy</SectionLabel>
+            <SectionLabel>Pixelator 😎</SectionLabel>
           </div>
           <StickyBlurReveal
             text="With 3+ years of experience, I turn ideas into compelling brand identities, intuitive digital experiences, and visual stories that connect creativity with purpose."
@@ -397,185 +388,8 @@ export default function HomePage() {
       </section>
 
       {/* 5. BENEFITS COLLAGE (BENTO GRID WITH EXACT SCROLL TRANSFORMS) */}
-      <section className="benefits-section">
-        <motion.div
-          className="section-center-header"
-          initial={!reduceMotion ? { opacity: 0, y: 40 } : {}}
-          whileInView={!reduceMotion ? { opacity: 1, y: 0 } : {}}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ type: "spring", duration: 1, bounce: 0.2 }}
-        >
-          <SectionLabel>Benefits</SectionLabel>
-          <h2 className="section-title">Why work with me?</h2>
-          <p className="section-subtitle">
-            Great photography is more than a service—it is an experience built
-            on collaboration, trust, and creativity.
-          </p>
-        </motion.div>
-
-        <div className="benefits-bento-grid">
-          {/* Card 1: Experience with Polaroid stack matching r7i_fgoKq */}
-          <motion.div
-            className="bento-card bento-card-experience"
-            initial={!reduceMotion ? { opacity: 0, x: -48, y: -32 } : {}}
-            whileInView={!reduceMotion ? { opacity: 1, x: 0, y: 0 } : {}}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ type: "spring", duration: 1, bounce: 0.3 }}
-            whileHover={!reduceMotion ? { y: -4 } : {}}
-          >
-            <div className="bento-card-img-wrap">
-              <img
-                src="/images/polaroid-stack.svg"
-                alt="Over 10 years experience"
-              />
-              <Corners variant="all" />
-            </div>
-            <div className="bento-card-text">
-              <h3>Over 10 years of experience</h3>
-            </div>
-          </motion.div>
-
-          {/* Card 2: Camera gear with lens offset matching ek4LPjrTK */}
-          <motion.div
-            className="bento-card bento-card-gear"
-            initial={!reduceMotion ? { opacity: 0, y: 80 } : {}}
-            whileInView={!reduceMotion ? { opacity: 1, y: 0 } : {}}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ type: "spring", duration: 1, bounce: 0.3 }}
-            whileHover={!reduceMotion ? { y: -4 } : {}}
-          >
-            <div className="bento-card-text">
-              <h3>Shot with the best camera gear</h3>
-            </div>
-            <div className="bento-card-img-wrap">
-              <img src="/images/camera-lens.svg" alt="Camera optical lens" />
-              <Corners variant="all" />
-            </div>
-          </motion.div>
-
-          {/* Card 3: Split portrait retouching matching ArSUe9hkj */}
-          <motion.div
-            className="bento-card bento-card-retouching"
-            initial={!reduceMotion ? { opacity: 0, scale: 1.2 } : {}}
-            whileInView={!reduceMotion ? { opacity: 1, scale: 1 } : {}}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              type: "spring",
-              stiffness: 900,
-              damping: 60,
-              mass: 1,
-            }}
-            whileHover={!reduceMotion ? { y: -4 } : {}}
-          >
-            <div className="bento-card-img-wrap">
-              <img
-                src="/images/split-portrait.svg"
-                alt="Before and after retouching comparison"
-              />
-              <Corners variant="all" />
-            </div>
-            <div className="bento-card-text">
-              <h3>Professional editing included</h3>
-            </div>
-          </motion.div>
-
-          {/* Card 4: Hands touching / client journey matching A5RB7b8sS & hKPE01EDy */}
-          <motion.div
-            className="bento-card bento-card-hands"
-            initial={!reduceMotion ? { opacity: 0, x: -70 } : {}}
-            whileInView={!reduceMotion ? { opacity: 1, x: 0 } : {}}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ type: "spring", duration: 1, bounce: 0.3 }}
-            whileHover={!reduceMotion ? { y: -4 } : {}}
-          >
-            <div className="bento-card-img-wrap">
-              <img src="/images/hands.svg" alt="Seamless collaboration" />
-              <Corners variant="all" />
-            </div>
-            <div className="bento-card-text">
-              <h3>Seamless client experience</h3>
-            </div>
-          </motion.div>
-
-          {/* Card 5: Eye banner / tailored vision matching jIXMUk6lZ */}
-          <motion.div
-            className="bento-card bento-card-banner"
-            initial={!reduceMotion ? { opacity: 0, scale: 1.15 } : {}}
-            whileInView={!reduceMotion ? { opacity: 1, scale: 1 } : {}}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ type: "spring", duration: 1, bounce: 0.3 }}
-            whileHover={!reduceMotion ? { y: -4 } : {}}
-          >
-            <div className="bento-card-img-wrap">
-              <img src="/images/eye-banner.svg" alt="Tailored to your vision" />
-              <Corners variant="all" />
-            </div>
-            <div className="bento-card-text">
-              <h3>Tailored to your vision</h3>
-            </div>
-          </motion.div>
-
-          {/* Card 6: Stats card with orange stars & client count matching jRcTuHh3d */}
-          <motion.div
-            className="bento-card bento-card-stats"
-            initial={!reduceMotion ? { opacity: 0, x: 48 } : {}}
-            whileInView={!reduceMotion ? { opacity: 1, x: 0 } : {}}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ type: "spring", duration: 1, bounce: 0.3 }}
-            whileHover={!reduceMotion ? { y: -4 } : {}}
-          >
-            <div className="bento-stats-inner">
-              <div className="stars-row">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={18}
-                    fill="var(--star-accent)"
-                    color="var(--star-accent)"
-                  />
-                ))}
-              </div>
-              <span className="bento-stat-number">524</span>
-              <span className="bento-stat-label">satisfied clients</span>
-              <div className="avatar-overlap-group">
-                <img
-                  src="/images/client-avatar-1.svg"
-                  alt="Client avatar"
-                  className="avatar-circle"
-                />
-                <img
-                  src="/images/client-avatar-2.svg"
-                  alt="Client avatar"
-                  className="avatar-circle"
-                />
-                <img
-                  src="/images/client-avatar-3.svg"
-                  alt="Client avatar"
-                  className="avatar-circle"
-                />
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 7: Turnaround card matching VN3RALsnw */}
-          <motion.div
-            className="bento-card bento-card-turnaround"
-            initial={!reduceMotion ? { opacity: 0, y: 30 } : {}}
-            whileInView={!reduceMotion ? { opacity: 1, y: 0 } : {}}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ type: "spring", duration: 1, bounce: 0.3 }}
-            whileHover={!reduceMotion ? { y: -4 } : {}}
-          >
-            <div className="turnaround-clock-visual">
-              <Clock size={44} className="clock-symbol" />
-            </div>
-            <div className="bento-card-text">
-              <h3>7-day turnaround</h3>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+        <AboutSection/>
+     
       {/* 6. EXPERIENCE */}
       <ExperienceSection experiences={experiences} />
 
@@ -617,7 +431,7 @@ export default function HomePage() {
           {/* Top Row: Sticky cards 1 & 2 (Wild Bloom & Soft Metals) */}
           <div className="portfolio-deck-row portfolio-deck-top">
             <div className="portfolio-two-col-grid">
-              {portfolioProjects.slice(0, 2).map((proj) => (
+              {portfolioProjects.slice(0, 1).map((proj) => (
                 <PortfolioCard
                   key={proj.id}
                   project={proj}
@@ -628,9 +442,31 @@ export default function HomePage() {
           </div>
 
           {/* Bottom Row: Cards 3 & 4 (Coastal Slow & Sun Veil - smoothly overlaps top cards on scroll) */}
-          <div className="portfolio-deck-row portfolio-deck-bottom">
+          <div className="portfolio-deck-row portfolio-deck-top">
             <div className="portfolio-two-col-grid">
-              {portfolioProjects.slice(2, 4).map((proj) => (
+              {portfolioProjects.slice(1, 2).map((proj) => (
+                <PortfolioCard
+                  key={proj.id}
+                  project={proj}
+                  badgeText="Portfolio"
+                />
+              ))}
+            </div>
+          </div>
+           <div className="portfolio-deck-row portfolio-deck-top">
+            <div className="portfolio-two-col-grid">
+              {portfolioProjects.slice(2,3).map((proj) => (
+                <PortfolioCard
+                  key={proj.id}
+                  project={proj}
+                  badgeText="Portfolio"
+                />
+              ))}
+            </div>
+          </div>
+           <div className="portfolio-deck-row portfolio-deck-top">
+            <div className="portfolio-two-col-grid">
+              {portfolioProjects.slice(3,4).map((proj) => (
                 <PortfolioCard
                   key={proj.id}
                   project={proj}
@@ -649,7 +485,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. TESTIMONIALS */}
-      <section className="testimonials-section">
+      {/* <section className="testimonials-section">
         <motion.div
           className="section-center-header"
           initial={!reduceMotion ? { opacity: 0, y: 40 } : {}}
@@ -666,7 +502,7 @@ export default function HomePage() {
         </motion.div>
 
         <Testimonials items={testimonials} />
-      </section>
+      </section> */}
 
       {/* 8. BLOG PREVIEW (WITH EXACT SPRING PHYSICS 120 20 2) */}
       <section className="blog-preview-section">
@@ -718,7 +554,7 @@ export default function HomePage() {
       </section>
 
       {/* 9. FAQ */}
-      <section className="faq-section">
+      {/* <section className="faq-section">
         <div className="faq-two-col-layout">
           <motion.div
             className="faq-left-intro"
@@ -745,7 +581,7 @@ export default function HomePage() {
             <GroupedAccordion items={faqs} />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 10. CLOSING CTA */}
       <CTASection />

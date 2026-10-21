@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { motion, useReducedMotion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
+import logo from '../assets/Secondary logo.svg'
 
 import Corners from "./Corners"
 import TextEffect from "./TextEffect"
@@ -90,7 +91,8 @@ export default function Footer() {
                 <div className="footer-brand-col">
                     <div className="footer-aperture-lockup">
                         <div className="footer-lockup-frame">
-                            <span className="footer-lockup-title">Aperture</span>
+                            <span className="footer-lockup-title">
+                                <img src={logo} alt="" /></span>
                             <Corners variant="all" />
                         </div>
                     </div>
@@ -107,9 +109,10 @@ export default function Footer() {
                         <ul className="footer-col-list">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/portfolio">Portfolio</Link></li>
-                            <li><Link to="/blog">Journal & Articles</Link></li>
-                            <li><Link to="/about">About August</Link></li>
-                            <li><Link to="/contact">Direct Inquiry</Link></li>
+                            <li><Link to="/resume">Resume</Link></li>
+                            {/* <li><Link to="/blog">Journal & Articles</Link></li> */}
+                            <li><Link to="/about">About Raswanth</Link></li>
+                            {/* <li><Link to="/contact">Direct Inquiry</Link></li> */}
                         </ul>
                     </div>
 

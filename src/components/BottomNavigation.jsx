@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom"
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { ApertureMark } from "./TopNavigation"
+import whiteLogo from '../assets/White_Logomark.svg'
 
 export default function BottomNavigation() {
     const reduceMotion = useReducedMotion()
@@ -73,8 +74,9 @@ export default function BottomNavigation() {
                         aria-label="Return home"
                         onClick={() => setMobileOpen(false)}
                     >
-                        <ApertureMark size={22} />
+                        <img className="nav-white-logo" src={whiteLogo} alt="" srcset="" />
                     </Link>
+                    
 
                     <div className="floating-nav-divider" />
 

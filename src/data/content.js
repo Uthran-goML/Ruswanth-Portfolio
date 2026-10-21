@@ -1,8 +1,8 @@
 export const siteInfo = {
-    name: "August Renner",
+    name: "Raswanth srinivasan",
     role: "Photographer",
     tagline: "Fashion, Portrait, Editorial & Commercial",
-    bio: "August Renner is a fashion and editorial photographer crafting precise, human-centered imagery for campaigns, magazines, and independent labels across Berlin, London, and international locations.",
+    bio: "Visual Designer with 3+ years of experience in branding, graphic design, UI/UX, and digital experiences, blending creative strategy with AI-powered design.",
     email: "studio@augustrenner.com",
     locations: ["Berlin", "London"],
     availability: "Available for global commissions in Europe, North America & worldwide",
@@ -306,27 +306,27 @@ export const faqs = [
 ]
 
 export const gearList = [
-    { category: "Primary Bodies", item: "Canon EOS R5 & R6 Mark II Mirrorless Systems" },
-    { category: "Prime Lenses", item: "Canon RF 50mm f/1.2 L USM · RF 35mm f/1.4 L VCM · RF 85mm f/1.2 L USM" },
-    { category: "Zoom & Specialty", item: "Canon RF 24-70mm f/2.8 L IS · Canon RF 70-200mm f/2.8 L IS" },
-    { category: "Studio & Location Lighting", item: "Profoto B10X Plus & B1X Location Kits · OCF Beauty Dishes & Softboxes" },
-    { category: "Support & Grip", item: "Manfrotto Carbon Fiber Tripods · C-Stands & Matthews Grip Arms" },
-    { category: "On-Set Tethering", item: "Tether Tools Pro Cables · Eizo ColorEdge CG2700S Color-Calibrated Displays" },
-    { category: "Post-Production Software", item: "Capture One Pro · Adobe Photoshop · Lightroom Classic" },
+    { category: "Branding & Visual Design", item: "Logo design, brand identity, corporate branding, packaging, graphic design, and marketing creatives." },
+    { category: "UI/UX & Web Design", item: "Figma, website design, landing pages, Shopify stores, HTML, CSS, and Bootstrap." },
+    { category: "AI & Creative Workflows", item: "AI-assisted ideation, generative visuals, creative experimentation, and streamlined design production." },
+    { category: "Motion & Content Design", item: "Video editing, campaign visuals, presentations, and digital content using tools including CapCut, Clipchamp, and Filmora." },
+    // { category: "Support & Grip", item: "Manfrotto Carbon Fiber Tripods · C-Stands & Matthews Grip Arms" },
+    // { category: "On-Set Tethering", item: "Tether Tools Pro Cables · Eizo ColorEdge CG2700S Color-Calibrated Displays" },
+    // { category: "Post-Production Software", item: "Capture One Pro · Adobe Photoshop · Lightroom Classic" },
 ]
 
 export const experiences = [
     {
         id: "exp-1",
         role: "Graphic Designer",
-        company: "GoML (Neuralgo.ai) ",
-        location: "Bengaluru, KA",
+        company: "GoML (Neuralgo.ai)",
+        location: "Coimbatore, TN",
         dates: "Mar 2025 – Present -",
         current: true,
         descriptions: [
-            "Develop cohesive brand identities and visual design systems across marketing, product, digital, and corporate communications.",
-            "Design websites, landing pages, UI/UX interfaces, marketing campaigns, and digital creatives to strengthen brand consistency and engagement.",
-            "Translate complex AI and technology concepts into compelling visual narratives, leveraging AI-powered design workflows to accelerate creative production",
+            "Develop cohesive <strong>brand identities and visual design systems</strong> across marketing, product, digital, and corporate communications.",
+            "Design <strong>websites, landing pages, UI/UX interfaces, marketing campaigns, and digital creatives</strong> to strengthen brand consistency and engagement.",
+            "Translate complex <strong>AI and technology concepts into compelling visual narratives</strong>, leveraging AI-powered design workflows to accelerate creative production",
         ]
     },
     {
@@ -337,22 +337,22 @@ export const experiences = [
         dates: "Jun 2024 – Mar 2025",
         current: false,
         descriptions: [
-            "Created brand identities, logo designs, and visual communication systems for diverse clients across multiple industries.",
-            "Designed websites, UI/UX layouts, digital marketing campaigns, social media creatives, and presentations aligned with client objectives",
-            "Translated creative briefs into cohesive branding and graphic design solutions, maintaining visual consistency across digital and marketing touchpoints."
+            "Created <strong>brand identities, logo designs, and visual communication systems</strong> for diverse clients across multiple industries.",
+            "Designed <strong>websites, UI/UX layouts, digital marketing campaigns, social media creatives, and presentations</strong> aligned with client objectives",
+            "Translated creative briefs into cohesive <strong>branding and graphic design solutions</strong>, maintaining visual consistency across digital and marketing touchpoints."
         ]
     },
     {
         id: "exp-3",
         role: "Graphic Designer",
         company: "Granny's Things",
-        location: "Bengaluru, KA",
+        location: "Erode, TN",
         dates: "Jun 2023 – Jun 2024",
         current: false,
         descriptions: [
-            "Designed digital and print marketing creatives to support brand communication, product promotion, and customer engagement",
-            "Developed product packaging, labels, promotional materials, and brand collateral to maintain a consistent visual identity.",
-            "Managed end-to-end graphic design projects, from concept development to final production, ensuring quality and brand consistency.",
+            "Designed <strong>digital and print marketing creatives</strong> to support brand communication, product promotion, and customer engagement",
+            "Developed <strong>product packaging, labels, promotional materials, and brand collateral</strong> to maintain a consistent visual identity.",
+            "Managed <strong>end-to-end graphic design projects</strong>, from concept development to final production, ensuring quality and brand consistency.",
         ]
     },
     // {

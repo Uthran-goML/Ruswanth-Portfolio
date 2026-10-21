@@ -1,17 +1,16 @@
 import React, { useRef, useEffect, useState } from "react"
 import { motion, useScroll, useTransform, useSpring, useReducedMotion } from "framer-motion"
 import { MapPin } from "lucide-react"
-import img1 from '../assets/frame 33.png'
-import img2 from '../assets/image 2.png'
-import img3 from '../assets/Portfolio Branding sheet.png'
+import img1 from '../assets/Experience_Goml.svg'
+import img2 from '../assets/Frame 34.svg'
+import img3 from '../assets/Experience_Grannys.svg'
 
 function PostageStampLogo({ company }) {
     if (company === "GoML (Neuralgo.ai)") {
-        console.log(company);
         return (
             <div className="exp-stamp">
                 <div className="exp-stamp__inner exp-stamp__inner--mygate">
-                    <img src={img1} alt="" srcset="" />
+                    <img className="goml_img" src={img1} alt="" srcset="" />
                 </div>
             </div>
         )
@@ -137,12 +136,12 @@ export default function ExperienceSection({ experiences = [] }) {
                 {/* Header matching Framer site exactly */}
                 <div className="exp-header">
                     <div className="exp-eyebrow">
-                        <span className="exp-eyebrow-arrow">▼</span>
+                        <span className="exp-eyebrow-arrow">♦</span>
                         <span>EXPERIENCE</span>
                     </div>
                     <h2 className="exp-heading">the journey so far</h2>
                     <p className="exp-subheading">
-                        From healthcare SaaS to insurance to community tech — four roles across two years, and counting.
+                        From brand identities to AI-powered visual experiences — 3 roles across 3+ years, and counting.
                     </p>
                 </div>
 

@@ -7,7 +7,7 @@ import PortfolioPage from "./pages/PortfolioPage"
 import PortfolioDetailPage from "./pages/PortfolioDetailPage"
 import BlogPage from "./pages/BlogPage"
 import BlogDetailPage from "./pages/BlogDetailPage"
-import AboutPage from "./pages/AboutPage"
+import {AboutPage} from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage"
 import TermsPage from "./pages/TermsPage"
@@ -20,7 +20,7 @@ function AnimatedPage({ children }) {
     return (
         <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-            animate={reduceMotion ? {} : { opacity: 1, y: 0 }}
+            animate={reduceMotion ? {} : { opacity: 1, y: 0, transitionEnd: { transform: "none" } }}
             exit={reduceMotion ? {} : { opacity: 0, y: -16 }}
             transition={{
                 duration: 0.4,

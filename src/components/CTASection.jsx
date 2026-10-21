@@ -4,8 +4,8 @@ import MasterButton from "./MasterButton"
 import PolaroidStack from "./PolaroidStack"
 
 export default function CTASection({
-    title = "The perfect shot is just a conversation away",
-    subtitle = "Whether planning a seasonal editorial story, an international brand campaign, or an intimate lookbook, share your dates and vision.",
+    title = "You bring the chaos.I'll bring the creativity.",
+    subtitle = "Let's turn big ambitions into bold identities, killer visuals, and digital experiences worth remembering.",
     buttonLabel = "Get in touch",
     showPolaroids = true,
 }) {
@@ -26,7 +26,7 @@ export default function CTASection({
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-                <h2 className="cta-heading">{title}</h2>
+                <h2 className="cta-heading">You bring the chaos,<br/>I'll bring the creativity.</h2>
                 <p className="cta-subtitle">{subtitle}</p>
                 <div className="cta-button-wrap">
                     <MasterButton to="/contact" variant="dark">
