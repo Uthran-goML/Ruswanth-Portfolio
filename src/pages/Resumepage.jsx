@@ -1,8 +1,11 @@
 import { Download } from 'lucide-react'
 import React from 'react'
 import { ImDownload2 } from 'react-icons/im'
-import resume from '../assets/Raswanth_Visual Designer_Resume.png'
+import resume from '../assets/Raswanth_Visual Designer.webp'
 import Footer from '../components/Footer'
+import Ruswanthlogo from "../assets/Secondary logo.svg"
+import logo from '../assets/Logomark.png'
+import { Link } from 'react-router-dom'
 
 
 
@@ -24,11 +27,23 @@ const Image=()=>{
 </svg>
   </>
 }
-
 const Resumepage = () => {
   return (
     <>
     <main className="resume-page-container">
+      <header className="about-top-bar">
+              <Link to="/" className="about-top-brand" aria-label="August Renner - Photographer">
+                <img src={Ruswanthlogo} alt="" />
+              </Link>
+      
+              <Link to="/" aria-label="Aperture Home">
+                <img src={logo} alt="" />
+              </Link>
+      
+              <Link to="/contact" className="about-top-contact-btn">
+                Contact
+              </Link>
+            </header>
       <header className='resume-heading-container'>
             <header>
               <Image/>
@@ -38,7 +53,9 @@ const Resumepage = () => {
             <p>For recruiters, hiring managers, and anyone who prefers </p>
             <p>the short version.</p>
             <main className='resume-heading-container-button'>
-              <button><Download />Download</button>
+              <a href={resume} download="../assets/Raswanth_Visual Designer_resume.pdf">
+                 <button><Download />Download</button>
+              </a>
               </main>
       </header>
       <main className='resume-container'>

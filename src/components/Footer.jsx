@@ -7,6 +7,7 @@ import logo from '../assets/Secondary logo.svg'
 import Corners from "./Corners"
 import TextEffect from "./TextEffect"
 import { siteInfo } from "../data/content"
+import PolaroidStack from "./PolaroidStack"
 
 export default function Footer() {
     const reduceMotion = useReducedMotion()
@@ -16,43 +17,28 @@ export default function Footer() {
         "/images/cta-polaroid-2.svg",
         "/images/cta-polaroid-3.svg",
     ]
+    const ctaImages = [
+        { src: "/images/cta-card-left.jpg", caption: "Coastal Serenity" },
+        { src: "/images/cta-card-center.jpg", caption: "Studio Portrait" },
+        { src: "/images/cta-card-right.jpg", caption: "Aura Skincare" },
+    ]
+    const showPolaroids = true;
 
     return (
         <footer className="site-footer">
-            {/* Upper visual flourish: 3 overlapping portrait cards with scale 1.2 onInView effect matching NhLGIPrtW */}
+            {/* Upper visual flourish: 3 overlapping portrait cards */}
             <div className="footer-flourish-container" aria-hidden="true">
-                <div className="footer-card-trio">
+                {showPolaroids && (
                     <motion.div
-                        className="footer-flourish-card footer-flourish-card-left"
-                        initial={!reduceMotion ? { scale: 1.15, opacity: 0 } : {}}
-                        whileInView={!reduceMotion ? { scale: 1, opacity: 1 } : {}}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ type: "spring", stiffness: 500, damping: 100, mass: 1 }}
+                        className="cta-polaroid-wrap"
+                        initial={!reduceMotion ? { opacity: 0, y: 35 } : {}}
+                        whileInView={!reduceMotion ? { opacity: 1, y: 0 } : {}}
+                        viewport={{ once: true, amount: 0.25 }}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <img src={flourishImages[0]} alt="" />
+                        <PolaroidStack images={ctaImages} variant="cta" />
                     </motion.div>
-
-                    <motion.div
-                        className="footer-flourish-card footer-flourish-card-center"
-                        initial={!reduceMotion ? { scale: 1.2, opacity: 0 } : {}}
-                        whileInView={!reduceMotion ? { scale: 1.08, opacity: 1 } : {}}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ type: "spring", stiffness: 500, damping: 100, mass: 1, delay: 0.1 }}
-                    >
-                        <img src={flourishImages[1]} alt="" />
-                        <Corners variant="all" />
-                    </motion.div>
-
-                    <motion.div
-                        className="footer-flourish-card footer-flourish-card-right"
-                        initial={!reduceMotion ? { scale: 1.15, opacity: 0 } : {}}
-                        whileInView={!reduceMotion ? { scale: 1, opacity: 1 } : {}}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ type: "spring", stiffness: 500, damping: 100, mass: 1, delay: 0.2 }}
-                    >
-                        <img src={flourishImages[2]} alt="" />
-                    </motion.div>
-                </div>
+                )}
             </div>
 
             {/* Social links row with northeast arrows */}

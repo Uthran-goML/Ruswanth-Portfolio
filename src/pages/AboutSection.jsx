@@ -4,7 +4,7 @@ import SectionLabel from "../components/SectionLabel"
 import MasterButton from "../components/MasterButton"
 import CTASection from "../components/CTASection"
 import TextEffect from "../components/TextEffect"
-import aboutImg from '../assets/about_img.png';
+import aboutImg from '../assets/AboutMe_Section.webp';
 import { gearList, testimonials } from "../data/content"
 
 export default function AboutSection() {

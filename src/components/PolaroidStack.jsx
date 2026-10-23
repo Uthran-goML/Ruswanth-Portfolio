@@ -1,5 +1,6 @@
 import React from "react"
 import { motion, useReducedMotion } from "framer-motion"
+import Corners from "./Corners"
 
 export default function PolaroidStack({
     images = [],
@@ -44,19 +45,24 @@ export default function PolaroidStack({
         <div className={`polaroid-trio-container ${className}`} aria-hidden="true">
             {images.slice(0, 3).map((img, idx) => {
                 const isCenter = idx === 1
+                const isLeft = idx === 0
                 return (
-                    <motion.div
+                    <div
                         key={idx}
                         className={`polaroid-trio-card ${
-                            isCenter ? "polaroid-trio-center" : idx === 0 ? "polaroid-trio-left" : "polaroid-trio-right"
+                            isCenter ? "polaroid-trio-center" : isLeft ? "polaroid-trio-left" : "polaroid-trio-right"
                         }`}
-                        whileHover={!reduceMotion ? { y: -8, scale: 1.02 } : {}}
-                        transition={{ duration: 0.3 }}
                     >
                         <div className="polaroid-photo-frame">
-                            <img src={img.src || img} alt="" className="polaroid-img" />
+                            <img
+                                src={img.src || img}
+                                alt={img.caption || ""}
+                                className="polaroid-img"
+                                loading="lazy"
+                            />
+                            <Corners variant="all" />
                         </div>
-                    </motion.div>
+                    </div>
                 )
             })}
         </div>

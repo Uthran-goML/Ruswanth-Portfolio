@@ -40,6 +40,30 @@ import heroPerson from "../assets/Bg Foreground image.webp";
 import rightFeather from "../assets/right-feather.png";
 import leftFeather from "../assets/left-feather.png";
 import AboutSection from "./AboutSection";
+import img1 from "../assets/toolkit_marque/Affinity.svg";
+import img2 from "../assets/toolkit_marque/Canva.svg";
+import img3 from "../assets/toolkit_marque/Capcut.svg";
+import img4 from "../assets/toolkit_marque/Clipchamp.svg";
+import img5 from "../assets/toolkit_marque/CorelDraw.svg";
+import img6 from "../assets/toolkit_marque/Figma.svg";
+import img7 from "../assets/toolkit_marque/illustrator.svg";
+import img8 from "../assets/toolkit_marque/indesign.svg";
+import img9 from "../assets/toolkit_marque/Photoshop.svg";
+import img10 from "../assets/toolkit_marque/Shopify.svg"
+import { span } from "framer-motion/client";
+
+const carouselImg =[
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+]
 
 export default function HomePage() {
   const reduceMotion = useReducedMotion();
@@ -265,7 +289,7 @@ export default function HomePage() {
             <SectionLabel>Pixelator 😎</SectionLabel>
           </div>
           <StickyBlurReveal
-            text="With 3+ years of experience, I turn ideas into compelling brand identities, intuitive digital experiences, and visual stories that connect creativity with purpose."
+            text="With 3+ years of experience, I create impactful brands, intuitive digital experiences, and purposeful visual stories.."
             scrollProgress={introProgress}
           />
         </div>
@@ -333,59 +357,6 @@ export default function HomePage() {
       </section>
 
       {/* 4. SERVICES */}
-      <section className="services-section">
-        <div className="services-inner-grid">
-          {/* Left Column matching TBWnCk6pD */}
-          <motion.div
-            className="services-intro-col"
-            initial={!reduceMotion ? { opacity: 0, y: 40 } : {}}
-            whileInView={!reduceMotion ? { opacity: 1, y: 0 } : {}}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ type: "spring", duration: 1, bounce: 0.2 }}
-          >
-            <SectionLabel>Services</SectionLabel>
-            <h2 className="services-heading">How can I help?</h2>
-            <p className="services-paragraph">
-              From editorial shoots to personal portraits, I bring your vision
-              to life with precision, creativity, and a deep understanding of
-              light and composition.
-            </p>
-            <div className="services-include-title">All services include:</div>
-            <ul className="services-checklist">
-              <li className="checklist-item">
-                <span className="check-icon-circle">
-                  <Check size={14} />
-                </span>
-                <span>Professional Editing</span>
-              </li>
-              <li className="checklist-item">
-                <span className="check-icon-circle">
-                  <Check size={14} />
-                </span>
-                <span>Edited & Unedited (RAW) Images</span>
-              </li>
-              <li className="checklist-item">
-                <span className="check-icon-circle">
-                  <Check size={14} />
-                </span>
-                <span>Personal and Commercial Licensing</span>
-              </li>
-            </ul>
-            <div className="services-action-wrap">
-              <MasterButton to="/portfolio" variant="dark">
-                View portfolio
-              </MasterButton>
-            </div>
-          </motion.div>
-
-          {/* Right Column: 3 Horizontal Service Cards with delays 0.1s, 0.2s, 0.3s */}
-          <div className="services-list-col">
-            {services.map((srv, idx) => (
-              <ServiceRow key={srv.id} service={srv} index={idx} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 5. BENEFITS COLLAGE (BENTO GRID WITH EXACT SCROLL TRANSFORMS) */}
         <AboutSection/>
@@ -403,16 +374,18 @@ export default function HomePage() {
           transition={{ type: "spring", duration: 1, bounce: 0.2 }}
         >
           <SectionLabel>Portfolio</SectionLabel>
-          <h2 className="section-title">A look through my lens</h2>
+          <h2 className="section-title">A little bit of pixels, a lot of purpose.</h2>
           <p className="section-subtitle">
-            Each frame tells a story, capturing genuine moments that showcase my
-            style and vision. Browse through my favorite projects.
+            Explore a collection of brand identities, digital experiences, 
+            marketing visuals, and creative experiments. Every project 
+            is an opportunity to turn bold ideas into meaningful design.
           </p>
 
           {/* Featured On Wordmarks */}
           <div className="featured-section-wrap">
-            <span className="featured-on-label">Featured on:</span>
-            <div className="featured-wordmarks-row">
+            <span className="featured-on-label">In my Toolkit:</span>
+            {/* <marquee behavior="scroll" direction="Left">
+              <div className="featured-wordmarks-row">
               <span className="wordmark-item">VOGUE</span>
               <span className="wordmark-bullet">·</span>
               <span className="wordmark-item">ELLE</span>
@@ -423,6 +396,19 @@ export default function HomePage() {
               <span className="wordmark-bullet">·</span>
               <span className="wordmark-item">ASTER MAGAZINE</span>
             </div>
+            </marquee> */}
+              <div className="carousel">
+                  <div className="carousel-group">
+                    {carouselImg.map((img,index)=>{
+                      return <span key={index}><img src={img} alt="" /></span>
+                    })}
+                  </div>
+                   <div className="carousel-group">
+                   {carouselImg.map((img,index)=>{
+                      return <span key={index}><img src={img} alt="" /></span>
+                    })}
+                  </div>
+              </div>
           </div>
         </motion.div>
 

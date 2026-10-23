@@ -7,15 +7,11 @@ export default function CTASection({
     title = "You bring the chaos.I'll bring the creativity.",
     subtitle = "Let's turn big ambitions into bold identities, killer visuals, and digital experiences worth remembering.",
     buttonLabel = "Get in touch",
-    showPolaroids = true,
+    // showPolaroids = true,
 }) {
     const reduceMotion = useReducedMotion()
 
-    const ctaImages = [
-        { src: "/images/cta-polaroid-1.svg", caption: "Paris Studio" },
-        { src: "/images/cta-polaroid-2.svg", caption: "London Editorial" },
-        { src: "/images/cta-polaroid-3.svg", caption: "Comporta Lookbook" },
-    ]
+    
 
     return (
         <section className="cta-section">
@@ -35,11 +31,6 @@ export default function CTASection({
                 </div>
             </motion.div>
 
-            {showPolaroids && (
-                <div className="cta-polaroid-wrap">
-                    <PolaroidStack images={ctaImages} variant="cta" />
-                </div>
-            )}
         </section>
     )
 }

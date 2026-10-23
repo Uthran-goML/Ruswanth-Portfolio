@@ -5,14 +5,31 @@ import PortfolioCard from "../components/PortfolioCard"
 import CTASection from "../components/CTASection"
 import TextEffect from "../components/TextEffect"
 import { portfolioProjects } from "../data/content"
+import { Link } from "react-router-dom"
+import Ruswanthlogo from "../assets/Secondary logo.svg"
+import logo from '../assets/Logomark.png'
 
 export default function PortfolioPage() {
     const reduceMotion = useReducedMotion()
 
     return (
         <div className="portfolio-page-root">
+             <header className="about-top-bar">
+                          <Link to="/" className="about-top-brand" aria-label="August Renner - Photographer">
+                            <img src={Ruswanthlogo} alt="" />
+                          </Link>
+                  
+                          <Link to="/" aria-label="Aperture Home">
+                            <img src={logo} alt="" />
+                          </Link>
+                  
+                          <Link to="/contact" className="about-top-contact-btn">
+                            Contact
+                          </Link>
+                        </header>
             {/* Scroll target marker for navigation activation */}
             <div id="portfolio-scroll-marker" className="scroll-marker" aria-hidden="true" />
+            
 
             <section className="portfolio-index-hero">
                 <div className="portfolio-intro-center">
