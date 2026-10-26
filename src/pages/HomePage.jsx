@@ -50,7 +50,12 @@ import img7 from "../assets/toolkit_marque/illustrator.svg";
 import img8 from "../assets/toolkit_marque/indesign.svg";
 import img9 from "../assets/toolkit_marque/Photoshop.svg";
 import img10 from "../assets/toolkit_marque/Shopify.svg"
-import { span } from "framer-motion/client";
+import {
+  Marquee,
+  MarqueeContent,
+  MarqueeItem,
+} from "@/components/ui/marquee";
+import { Card, CardContent } from "@/components/ui/card";
 
 const carouselImg =[
   img1,
@@ -64,6 +69,37 @@ const carouselImg =[
   img9,
   img10,
 ]
+
+const items = [
+  { icon: img1,},
+  { icon: img2,},
+  { icon: img3,},
+  { icon: img4,},
+  { icon: img5,},
+  { icon: img6,},
+  { icon: img7,},
+  { icon: img8,},
+  { icon: img9,},
+  { icon: img10,},
+];
+
+const MarqueeDemo = () => (
+  <Marquee speed={35} spacing="18px" pauseOnInteraction={false} autoFill={true}>
+    <MarqueeContent>
+      {items.map(({ icon: Icon }, idx) => (
+        <MarqueeItem key={idx}>
+          <div className="toolkit-badge">
+            {typeof Icon === "string" ? (
+              <img src={Icon} alt={`tool-${idx}`} className="toolkit-badge-icon" />
+            ) : (
+              <Icon className="toolkit-badge-icon" />
+            )}
+          </div>
+        </MarqueeItem>
+      ))}
+    </MarqueeContent>
+  </Marquee>
+);
 
 export default function HomePage() {
   const reduceMotion = useReducedMotion();
@@ -397,18 +433,9 @@ export default function HomePage() {
               <span className="wordmark-item">ASTER MAGAZINE</span>
             </div>
             </marquee> */}
-              <div className="carousel">
-                  <div className="carousel-group">
-                    {carouselImg.map((img,index)=>{
-                      return <span key={index}><img src={img} alt="" /></span>
-                    })}
-                  </div>
-                   <div className="carousel-group">
-                   {carouselImg.map((img,index)=>{
-                      return <span key={index}><img src={img} alt="" /></span>
-                    })}
-                  </div>
-              </div>
+             <div className="carousel"> 
+              <MarqueeDemo/>
+               </div>
           </div>
         </motion.div>
 

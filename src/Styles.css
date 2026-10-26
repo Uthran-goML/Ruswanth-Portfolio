@@ -122,6 +122,252 @@ p {
   line-height: 1.65;
 }
 
+/* ==========================================================================
+   MARQUEE COMPONENT (Infinite Smooth Continuous Scrolling)
+   ========================================================================== */
+.ui-marquee,
+.ui-marquee-root,
+[data-slot="marquee"],
+[data-part="root"] {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  user-select: none;
+}
+
+/* Fading edge mask for seamless entry and exit */
+.ui-marquee--faded.ui-marquee--horizontal,
+.ui-marquee-fade-x,
+[data-slot="marquee"][data-edges="true"][data-orientation="horizontal"] {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+.ui-marquee--faded.ui-marquee--vertical,
+.ui-marquee-fade-y,
+[data-slot="marquee"][data-edges="true"][data-orientation="vertical"] {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+.ui-marquee__viewport,
+.ui-marquee-viewport,
+[data-slot="marquee-viewport"],
+[data-part="viewport"] {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ui-marquee__content,
+.ui-marquee-content,
+[data-slot="marquee-content"],
+[data-part="content"] {
+  display: flex !important;
+  flex-shrink: 0 !important;
+  min-width: max-content;
+  align-items: center;
+  will-change: transform;
+}
+
+/* Horizontal infinite linear rotation */
+.ui-marquee--horizontal .ui-marquee__content,
+.ui-marquee-horizontal .ui-marquee-content,
+[data-orientation="horizontal"] [data-slot="marquee-content"],
+[data-orientation="horizontal"] [data-part="content"],
+[data-part="content"][data-orientation="horizontal"] {
+  flex-direction: row !important;
+  animation: marqueeLoopX var(--marquee-duration, 25s) linear infinite var(--marquee-delay, 0s);
+}
+
+/* Vertical infinite linear rotation */
+.ui-marquee--vertical .ui-marquee__content,
+.ui-marquee-vertical .ui-marquee-content,
+[data-orientation="vertical"] [data-slot="marquee-content"],
+[data-orientation="vertical"] [data-part="content"],
+[data-part="content"][data-orientation="vertical"] {
+  flex-direction: column !important;
+  animation: marqueeLoopY var(--marquee-duration, 25s) linear infinite var(--marquee-delay, 0s);
+}
+
+/* Pause on hover if pause-on-interaction is active */
+[data-pause-on-interaction]:hover .ui-marquee__content,
+[data-pause-on-interaction]:hover .ui-marquee-content,
+[data-pause-on-interaction]:hover [data-slot="marquee-content"],
+[data-pause-on-interaction]:hover [data-part="content"],
+[data-pause-on-interaction]:focus-within .ui-marquee__content,
+[data-pause-on-interaction]:focus-within [data-slot="marquee-content"],
+[data-state="paused"] .ui-marquee__content,
+[data-state="paused"] [data-slot="marquee-content"],
+[data-state="paused"] [data-part="content"] {
+  animation-play-state: paused;
+}
+
+/* Reverse direction */
+[data-reverse] .ui-marquee__content,
+[data-reverse] [data-slot="marquee-content"],
+[data-reverse] [data-part="content"] {
+  animation-direction: reverse;
+}
+
+.ui-marquee__item,
+.ui-marquee-item,
+[data-slot="marquee-item"],
+[data-part="item"] {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-marquee__edge,
+.ui-marquee-edge,
+[data-slot="marquee-edge"],
+[data-part="edge"] {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@keyframes marqueeLoopX {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--marquee-translate, -100%), 0, 0);
+  }
+}
+
+@keyframes marqueeLoopY {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, var(--marquee-translate, -100%), 0);
+  }
+}
+
+/* Toolkit badge and card styles */
+.featured-section-wrap {
+  width: 100%;
+  margin: 28px 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.featured-on-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted, #6b7280);
+}
+
+.toolkit-badge {
+  display:flex;
+  align-items: center;
+  gap: 22px;
+  padding: 30px;
+  border-radius: var(--radius-pill, 100px);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+.toolkit-badge img{
+  height: 50px;
+  width: 50px;
+}
+.toolkit-badge-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+.toolkit-badge-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink, #111);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   CARD COMPONENT (Traditional CSS)
+   ========================================================================== */
+
+
+
+/* .ui-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 24px 16px;
+} */
+
+/* .ui-card__title {
+  font-family: var(--font-primary, inherit);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink, #000000);
+  margin: 0;
+} */
+
+.ui-card__description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted, #6b7280);
+  margin: 0;
+}
+
+.ui-card__content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ui-card__header + .ui-card__content {
+  padding-top: 0;
+}
+
+.ui-card__footer {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px 24px;
+  margin-top: auto;
+}
+
 .page-large-heading {
   font-size: clamp(2.5rem, 5vw, 4.25rem);
   letter-spacing: -0.04em;
@@ -3207,8 +3453,7 @@ p {
 }
 .carousel{
   margin: 100px auto;
-  width: 90%;
-  border:0.075rem solid rgb(177, 177, 177);
+  width: 100%;
   display: flex;
   overflow-x: auto;
 }
