@@ -74,7 +74,7 @@ export default function BottomNavigation() {
                         aria-label="Return home"
                         onClick={() => setMobileOpen(false)}
                     >
-                        <img className="nav-white-logo" src={whiteLogo} alt="" srcset="" />
+                        <img className="nav-white-logo" src={whiteLogo} alt="" srcSet="" />
                     </Link>
                     
 

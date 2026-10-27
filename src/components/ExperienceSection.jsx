@@ -10,7 +10,7 @@ function PostageStampLogo({ company }) {
         return (
             <div className="exp-stamp">
                 <div className="exp-stamp__inner exp-stamp__inner--mygate">
-                    <img className="goml_img" src={img1} alt="" srcset="" />
+                    <img className="goml_img" src={img1} alt="" srcSet="" />
                 </div>
             </div>
         )

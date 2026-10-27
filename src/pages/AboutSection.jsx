@@ -6,10 +6,41 @@ import CTASection from "../components/CTASection"
 import TextEffect from "../components/TextEffect"
 import aboutImg from '../assets/AboutMe_Section.webp';
 import { gearList, testimonials } from "../data/content"
+import { span } from "framer-motion/client"
+import {
+  Marquee,
+  MarqueeContent,
+  MarqueeItem,
+} from "@/components/ui/marquee";
 
 export default function AboutSection() {
     const reduceMotion = useReducedMotion()
     const featuredTestimonial = testimonials[0]
+
+    const items = [
+      { icon: "VISUAL IDENTITY",},
+      { icon: "PERFORMANCE ADS",},
+      { icon: "SOCIAL MEDIA"},
+      { icon: "SEO & GROWTH",},
+      { icon: "BRAND STRATEGY"},
+      { icon: "DIGITAL MARKETING",},
+      { icon: "VISUAL IDENTITY",},
+    ];
+    
+    const MarqueeAbout = () => (
+      <Marquee speed={35} spacing="18px" pauseOnInteraction={false} autoFill={true}>
+        <MarqueeContent>
+          {items.map(({ icon: Icon }, idx) => (
+            <MarqueeItem key={idx}>
+              <div className="toolkit-badge">
+                  <span>/</span>
+                  <span>{Icon}</span>
+              </div>
+            </MarqueeItem>
+          ))}
+        </MarqueeContent>
+      </Marquee>
+    );
 
     return (
         <div className="about-page-root">
@@ -55,6 +86,7 @@ export default function AboutSection() {
                         </div>
                     </div>
                 </div>
+                <MarqueeAbout/>
             </section>
 
             {/* 2. EDITORIAL TEXT COLUMNS (matching FbAuh6ntu: opacity 0, y: 40, spring 1s 0.2s) */}

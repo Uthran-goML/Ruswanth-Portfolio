@@ -139,121 +139,26 @@ export default function HomePage() {
 
       {/* 1. HERO SECTION */}
       <section className="home-hero-section">
-        {/* Scroll activation marker */}
-        <div
-          id="hero-scroll-marker"
-          className="scroll-marker"
-          aria-hidden="true"
-        />
-
-        {/* Top Header / Branding Nav */}
-        <header className="hero-top-nav">
-          <div className="hero-nav-left">
-            <Link
-              to="/"
-              className="hero-secondary-logo-link"
-              aria-label="Raswanth Srinivasan"
-            >
-              <img
-                src={secondaryLogo}
-                alt="Raswanth Srinivasan"
-                className="hero-secondary-logo-img"
-              />
-            </Link>
-          </div>
-          <div className="hero-nav-center">
-            <img src={logomark} alt="Logo" className="hero-logomark-img" />
-          </div>
-        </header>
-
-        {/* Cloud Layer (Background) */}
-        <div className="hero-cloud-container" aria-hidden="true">
-          <motion.div
-            className="hero-cloud-motion-wrap"
-            style={!reduceMotion ? { y: cloudParallaxY } : {}}
-          >
-            <img src={cloudBg} alt="" className="hero-cloud-img" />
-          </motion.div>
-        </div>
-
-        {/* Middle Typography Layer: Greeting, Visual Designer, Subtext */}
-        <div className="hero-content-layer">
-          <div className="hero-typography-container">
-            {/* Greeting: 👋 Hey, I'm Raswanth */}
-            <motion.div
-              className="hero-greeting-box"
-              initial={!reduceMotion ? { opacity: 0, y: 25 } : false}
-              animate={!reduceMotion ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.9,
-                delay: preloaded ? 0.15 : 0.45,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              <span className="hero-greeting-wave">👋</span>
-              <span className="hero-greeting-text">
-                Hey, I'm <strong>Raswanth</strong>
-              </span>
-            </motion.div>
-
-            {/* Headline: Visual Designer */}
-            <motion.h1
-              className="hero-main-title"
-              initial={!reduceMotion ? { opacity: 0, y: 45 } : false}
-              animate={!reduceMotion ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                type: "spring",
-                duration: 1.6,
-                bounce: 0.12,
-                delay: preloaded ? 0.25 : 0.55,
-              }}
-            >
-              <span className="hero-title-word hero-word-visual">Visual</span>
-              <span className="hero-title-word hero-word-designer">
-                Designer
-              </span>
-            </motion.h1>
-
-            {/* Subtext under right side of Designer */}
-            <motion.div
-              className="hero-tagline-box"
-              initial={!reduceMotion ? { opacity: 0, y: 20 } : false}
-              animate={!reduceMotion ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.9,
-                delay: preloaded ? 0.35 : 0.7,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              <p className="hero-tagline-text">
-                Making pixels behave and brands stop
-                <br />
-                looking like everyone else.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Head/Portrait Cutout Layer (Foreground) */}
-        <div className="hero-person-container" aria-hidden="true">
-          <motion.div
-            className="hero-person-motion-wrap"
-            style={!reduceMotion ? { y: headParallaxY } : {}}
-            initial={!reduceMotion ? { opacity: 0, y: 40 } : false}
-            animate={!reduceMotion ? { opacity: 1, y: 0 } : {}}
-            transition={{
-              type: "spring",
-              duration: 1.8,
-              bounce: 0.1,
-              delay: preloaded ? 0.2 : 0.5,
-            }}
-          >
-            <img src={heroPerson} alt="Raswanth" className="hero-person-img" />
-          </motion.div>
-        </div>
-
-        {/* Bottom gradient mask for smooth fade into page content */}
-        <div className="hero-bottom-fade-mask" aria-hidden="true" />
+          <main className="hero-section-cloud-img">
+            <img src={cloudBg} alt="" />
+          </main>
+           <header className="hero-section-header-and-logo">
+                <img className="hero-section-name-logo" src={secondaryLogo} alt="" />
+                <img src={logomark} alt="" />
+                <div className="contact-header-button">
+                  <button>Contact</button>
+                </div>
+            </header>
+            <main className="hero-section-main">
+              <div className="hero-section-main-text-left-div">
+                <p><span className="hero-section-main-text-greeting-hand">👋</span>Hey, I’m <span className="hero-section-main-text-name">Raswanth</span></p>
+              </div>
+              <div className="hero-section-main-text-center-div"><p>Visual Designer</p></div>
+              <div className="hero-section-main-text-right-div"><p>Making pixels behave and brands stop looking like everyone else.</p></div>
+            </main>
+            <main className="hero-section-peron-img-div">
+                 <img src={heroPerson} alt="" />
+            </main>
       </section>
 
       {/* 2. TRUST / PHILOSOPHY STRIP */}
